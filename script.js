@@ -114,7 +114,7 @@ function getValuesAndSearch(){ // funzione che, dopo aver trasformato il testo d
   let finalResult = searchJob(byTitleValue, byLocationValue)
   console.log(finalResult)
   for ( let i = 0; i < finalResult.result.length; i++){
-    jobs[i] = finalResult.result[i] // per ogni risultato corrispondente a jobs
+    let job = finalResult.result[i];// usa il risultato corrente senza alterare l'array originale
     let newListElement = document.createElement("li") // deve creare un nuovo elemento lista
     newListElement.innerHTML = "Lavoro: " + finalResult.result[i].title + " - " + "Location: " + finalResult.result[i].location // che deve presentarsi in questo formato
     resultList.appendChild(newListElement) // e aggiungerlo in fondo al codice HTML
